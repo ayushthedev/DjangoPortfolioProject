@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+		{% load staticfiles %}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
@@ -10,7 +11,9 @@
 	<title>Album example for Bootstrap</title>
 
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		  					integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		  					crossorigin="anonymous">
 
 	<!-- Custom styles for this template -->
 	<link href="album.css" rel="stylesheet">
@@ -21,13 +24,15 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#">Django Portfolio Project by Ayush and Prashant</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+				  data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+				  aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Resumes</a>
+                <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resumes</a>
               <a class="nav-item nav-link" href="#">Github</a>
               <a class="nav-item nav-link disabled" href="#">Disabled</a>
             </div>
@@ -40,7 +45,10 @@
 	  <section class="jumbotron text-center">
 		<div class="container">
 		  <h1 class="jumbotron-heading">Album example</h1>
-		  <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+		  <p class="lead text-muted">
+			  Something short and leading about the collection below—its contents, the creator, etc.
+			  Make it short and sweet, but not too short so folks don't simply skip over it entirely.
+		  </p>
 		  <p>
 			<a href="#" class="btn btn-primary my-2">Main call to action</a>
 			<a href="#" class="btn btn-secondary my-2">Secondary action</a>
@@ -53,13 +61,13 @@
 
 		  <div class="row">
 			  {% for job in jobs.all %}
-			<div class="col-md-4">
-			  <div class="card mb-4 shadow-sm">
-				<img class="card-img-top" src="{{ job.image.url }}" alt="Card image cap">
-				<div class="card-body">
-				  <p class="card-text">{{ job.summary }}</p>
-				  </div>
-				</div>
+				<div class="col-md-4">
+				  <div class="card mb-4 shadow-sm">
+					<img class="card-img-top" src="{{ job.image.url }}" alt="Card image cap">
+					<div class="card-body">
+					  <p class="card-text">{{ job.summary }}</p>
+					  </div>
+					</div>
 			  </div>
 			  {% endfor %}
 			</div>

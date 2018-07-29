@@ -1,3 +1,4 @@
+
 from django.db import models
 class Blog(models.Model):
     title = models.CharField(max_length=255)
@@ -5,6 +6,12 @@ class Blog(models.Model):
     body = models.TextField(max_length=2000)
     image = models.ImageField(upload_to="images/")
 
+    # def __str__(self):
+    #     return
 
+    def summary(self):
+        return self.body[:100] + '...'
+    def pub_date_pretty(self):
+        return self.pub_date.strftime("%b %e %Y")
 
 # Create your models here.
