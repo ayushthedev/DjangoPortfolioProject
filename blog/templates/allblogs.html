@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
+      {% load staticfiles %}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="../../../../favicon.ico">
 
-	<title>Album example for Bootstrap</title>
+	<title>P/A & Team</title>
 
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -22,7 +23,7 @@
 
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Django Portfolio Project by Ayush and Prashant</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Djanmego Portolio Project by Ayush and Prashant</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse"
 				  data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
 				  aria-expanded="false" aria-label="Toggle navigation">
@@ -30,10 +31,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Resumes</a>
-              <a class="nav-item nav-link" href="#">Github</a>
-              <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                <a class="nav-item nav-link active" href="https://www.linkedin.com/in/prashant-chouksey-2b614293/">LinkedIN</a>
+                <a class="nav-item nav-link active" href="{% static 'resume.pdf' %}">Resumes</a>
+              <a class="nav-item nav-link active" href="#">Github</a>
+              <a class="nav-item nav-link active" href="#">Disabled</a>
             </div>
           </div>
         </nav>
@@ -46,7 +47,7 @@
         <hr />
 
         {% for blog in blogs.all %}
-            <a href=""> <h4>{{ blog.title }}</h4></a>
+            <a href="{% url 'detail' blog.id %}"> <h4>{{ blog.title }}</h4></a>
             <h6>{{ blog.pub_date_pretty }}</h6>
             <br/>
             <img src="{{ blog.image.url }}" class="img-thumbnail img-responsive img-circle" height="200" width="200"/>

@@ -78,8 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliodb',
+
         # 'USER': 'postgres',
-        # 'PASSWORD': 'ashish',
+        # 'PASSWORD': 'ashis,
+
         'HOST':'localhost',
         'PORT':'5432'
     }
@@ -124,8 +126,9 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-STATICFILE_DIRS = [
-    STATIC_ROOT,
+STATICFILES_DIRS = [
+
+os.path.join(BASE_DIR, 'PersonalPortfolioProject/static')
 ]
 
 MEDIA_URL = '/media/'

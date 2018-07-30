@@ -6,9 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="../../../../favicon.ico">
 
-	<title>Album example for Bootstrap</title>
+	<title>Welcome to Portfolio</title>
 
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -31,7 +30,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resumes</a>
               <a class="nav-item nav-link" href="#">Github</a>
               <a class="nav-item nav-link disabled" href="#">Disabled</a>
